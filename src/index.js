@@ -5,13 +5,14 @@ const signin = require("./models/signIn.model");
 const app = express();
 const PORT = 8080;
 
+require("dotenv").config();
 // middleware
 app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb://admin:Password1@ds147520.mlab.com:47520/wtr",
-  { useNewUrlParser: true },
+  process.env.MONGO_URI,
+  { useNewUrlParser: true, useUnifiedTopology: true },
   function(err) {
     if (err) return console.log(err.error);
     console.log("Connected to DB");

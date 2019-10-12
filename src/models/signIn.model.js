@@ -8,4 +8,4 @@ const signInSchema = new schema({
   issue: String
 });
 
-module.exports = mongoose.model("SignInn", signInSchema);
+module.exports = mongoose.model("SignIn", signInSchema);
